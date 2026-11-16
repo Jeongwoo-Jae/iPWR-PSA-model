@@ -1,2 +1,123 @@
 # iPWR-PSA-model
-Preliminary full-power internal-events Level 1 PSA model of the IAEA iPWR simulator (SLOCA, LOFW), provided in AIMS-PSA and CAFTA formats. Free to modify for research and education.
+
+A preliminary **full-power, internal-events Level 1 PSA model** of the IAEA **iPWR (integral Pressurized Water Reactor) simulator**, developed at Kyung Hee University.
+The same model is provided in two formats:
+
+- **AIMS-PSA** (KAERI): the original model
+- **CAFTA** (EPRI, educational version 11): an equivalent model rebuilt for compatibility with users who do not have AIMS-PSA
+
+This model accompanies the paper *Development of an Open PSA Model Using iPWR Simulator* (J. Jae, D. Kwon, H. Seok, G. Heo).
+
+> **Note.** This is a preliminary model based on limited design information and engineering assumptions. It is intended for PSA methodology research and education, not for the risk assessment of any real reactor design.
+
+---
+
+## Model scope
+
+| Item | Description |
+|---|---|
+| Plant | IAEA iPWR simulator (passive integral PWR) |
+| Scope | Level 1, full-power, internal events |
+| Initiating events | Small LOCA (SLOCA, inadvertent opening of a pressurizer safety valve), Loss of Feedwater (LOFW) |
+| Systems modeled | Reactor trip (RT), Automatic Depressurization System (ADS), Passive Injection System (PIS), Gravity Injection System (GIS), Passive Decay Heat Removal (PDHR) |
+| Reliability data | INL/EXT-21-65055 (2020 update of U.S. LWR generic data) and generic CCF parameters (alpha-factor method) |
+| Mission time | 24 h |
+| Truncation | 1.0E-17 |
+
+## Results
+
+| Initiating event | Frequency (/ry) | CDF (/ry) | MCS* |
+|---|---|---|---|
+| SLOCA | 5.501E-4 | 5.815E-10 | 101 |
+| LOFW | 2.190E-2 | 3.961E-9 | 124 |
+| **Total** | | **4.542E-9** | 225 |
+
+\* Counted per sequence, as in AIMS-PSA. CAFTA minimizes cut sets across sequences and reports 221.
+
+Key insights:
+
+- The dominant sequence is LOFW with failure of reactor trip (mechanical failure of control rod insertion, `RPRDF-RT-FAIL`), which contributes about 83% of the CDF.
+- The next largest contributors are common cause failures of the PIS and GIS check valves (`PICVW-0103`, `GICVW-0103`).
+- Monte Carlo uncertainty analysis (100,000 samples, CAFTA UNCERT): mean 4.55E-9/ry, 5th–95th percentile 1.9E-10 to 1.8E-8/ry.
+
+## Repository structure
+
+```
+iPWR-PSA-model/
+├── iPWR PSA (AIMS-PSA)/
+│   ├── iPWR-KHU.prj            AIMS-PSA project file
+│   └── Base/
+│       ├── RT.KFT, ADS.Kft, PIS.KFT, GIS.Kft, PDHR.Kft
+│       │                       System fault trees (basic event data included)
+│       ├── ET-INTERFACE.kft    Interface logic for heat removal and cooldown headings
+│       ├── IPWR-IE-FREQ.KFT    Initiating event frequencies
+│       ├── IPWR-SUM.KFT        Top gate (IPWR-TOP) combining the initiating events
+│       ├── SLOCA.ket           SLOCA event tree
+│       └── LOFW.Ket            LOFW event tree
+└── iPWR PSA (CAFTA)/
+    ├── iPWR.psa                CAFTA project file
+    ├── iPWR.rr                 Reliability database (basic events, type codes, distributions)
+    ├── iPWR-ONETOP.caf         Master fault tree (top gate: IPWR-CD)
+    ├── iPWR-RT.caf, iPWR-ADS.caf, iPWR-PIS.caf, iPWR-GIS.caf, iPWR-PDHR.caf
+    │                           System fault trees
+    ├── iPWR-ET-INTERFACE.caf   Interface logic for heat removal and cooldown headings
+    ├── iPWR-SLOCA.eta          SLOCA event tree
+    └── iPWR-LOFW.eta           LOFW event tree
+```
+
+## Requirements
+
+| Item | How to obtain |
+|---|---|
+| iPWR simulator and manual | Contact the IAEA. The simulator is provided by the IAEA for education and training. |
+| AIMS-PSA | Contact the Korea Atomic Energy Research Institute (KAERI). |
+| CAFTA | Electric Power Research Institute (EPRI). The CAFTA model was built with the educational version 11, which can save fault trees with fewer than 200 gates (the master fault tree has 65). |
+
+## How to use
+
+### AIMS-PSA
+
+1. Open `iPWR PSA (AIMS-PSA)/iPWR-KHU.prj` in AIMS-PSA.
+2. Run the quantification (One Top, FTREX, truncation 1.0E-17).
+
+### CAFTA
+
+1. Open `iPWR PSA (CAFTA)/iPWR.psa` in CAFTA.
+2. Open `iPWR-ONETOP.caf` (Master Fault Tree), select the top gate `IPWR-CD`, and click **Calculate**.
+3. Use **CAFTA Cutset Generator x64** with a truncation probability of **1.0E-17**. The result is saved in a `Results` folder.
+4. Importance measures: open the cut set file and use **Tools → View Importances**.
+5. Uncertainty analysis: open the cut set file and use **Tools → Uncertainty Analysis** (Monte Carlo). Distributions are stored in the type code (TC) and basic event (BE) tables of `iPWR.rr`.
+
+Notes for CAFTA users:
+
+- All fault trees refer to the database by the relative path `iPWR.rr`. Keep all files in the same folder.
+- `IPWR-CD` is the OR of the failure branches of the 12 core damage sequences. This reproduces the AIMS-PSA delete-term result for this model. Do not quantify the event trees with the `AND NOT` (success branch) logic generated by CAFTA, as it overestimates the CDF.
+- `iPWR-ET-INTERFACE.caf` refers to gates defined in `iPWR-PDHR.caf`. Quantify through the master fault tree, not the individual file.
+- Sequence frequencies shown in the event trees were entered manually from the CAFTA results. Update them after re-quantification.
+
+## Main modeling assumptions
+
+- Secondary-side heat removal (feedwater and main steam) is conservatively assumed to be unavailable (`UVAILABLE-FWS/MSS` = 1.0). Heat removal is therefore credited only through PDHR.
+- If ADS fails during SLOCA, success requires operator rapid cooldown and depressurization using both PDHR trains (HEP 1.0E-3), followed by PIS and GIS injection.
+- Containment heat removal (CCS) is not modeled.
+- The 125 V DC buses (`EPDCF-125V-DIV1/2`) are shared by ADS and PDHR. Common cause failure of the DC buses is not modeled.
+- Dependencies between human failure events are not modeled.
+- The reactor trip signal failure probability (`RTCHA-SIGNAL`, 1.0E-5) is assumed because no detailed protection system model is available.
+
+## License
+
+This model is released under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. See [LICENSE](LICENSE).
+
+You may use, copy, modify, and redistribute the model for **non-commercial research and education**, provided that you give appropriate credit. Commercial use requires separate permission from the authors.
+
+Copyright © 2026 Jeongwoo Jae, Dohun Kwon, Ho Seok, Gyunyoung Heo, Kyung Hee University.
+
+## Citation
+
+If you use this model, please cite:
+
+> J. Jae, D. Kwon, H. Seok, G. Heo, "Development of an Open PSA Model Using iPWR Simulator," (journal and year to be added).
+
+## Contact
+
+Gyunyoung Heo, Department of Nuclear Engineering, Kyung Hee University (gheo@khu.ac.kr)
