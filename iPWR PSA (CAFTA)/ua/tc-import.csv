@@ -1,9 +1,0 @@
-TC-LOMFW,0.0219,Loss of Main Feedwater (IE),SPAR 2020 LOMFW,G,0.000470206
-TC-SVV-SOP,6.28e-08,"Safety Valve Spurious Operation (RCS, PWR)",SPAR 2020 SVV-SOP-PWR-RCS,G,2.62923e-15
-TC-HOV-FTOC,0.00123,Hydraulic-Operated Valve Fails To Open,SPAR 2020 HOV-FTOC,B,3.46603e-06
-TC-MOV-FTO,0.000343,Motor-Operated Valve Fails To Open,SPAR 2020 MOV-FTO,B,4.74678e-08
-TC-CKV-FTO,1.12e-05,Check Valve Fails To Open,SPAR 2020 CKV-FTO,B,2.49989e-10
-TC-TNK-FC,4.18e-07,Tank Rupture,SPAR 2020 TNK-FC,G,4.1601e-13
-TC-HTX-LOHT,3.39e-07,Heat Exchanger Plugging/Loss of Heat Transfer,SPAR 2020 HTX-LOHT,G,2.37932e-13
-TC-BUS-DC,7.13e-07,DC Bus Fails To Operate,SPAR 2020 BUS-FTOP-DC,G,3.38913e-13
-TC-CRD-FTOP,1.68e-07,Control Rod Drive Fails To Insert Rod,SPAR 2020 CRD-FTOP,G,5.04e-14
