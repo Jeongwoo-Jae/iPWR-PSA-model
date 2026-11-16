@@ -6,8 +6,6 @@ The same model is provided in two formats:
 - **AIMS-PSA** (KAERI): the original model
 - **CAFTA** (EPRI, educational version 11): an equivalent model rebuilt for compatibility with users who do not have AIMS-PSA
 
-This model accompanies the paper *Development of an Open PSA Model Using iPWR Simulator* (J. Jae, D. Kwon, H. Seok, G. Heo).
-
 > **Note.** This is a preliminary model based on limited design information and engineering assumptions. It is intended for PSA methodology research and education, not for the risk assessment of any real reactor design.
 
 ---
@@ -26,13 +24,13 @@ This model accompanies the paper *Development of an Open PSA Model Using iPWR Si
 
 ## Results
 
-| Initiating event | Frequency (/ry) | CDF (/ry) | MCS* |
+| Initiating event | Frequency (/ry) | CDF (/ry) | Minimal cut sets |
 |---|---|---|---|
-| SLOCA | 5.501E-4 | 5.815E-10 | 101 |
+| SLOCA | 5.501E-4 | 5.815E-10 | 97 |
 | LOFW | 2.190E-2 | 3.961E-9 | 124 |
-| **Total** | | **4.542E-9** | 225 |
+| **Total** | | **4.542E-9** | **221** |
 
-\* Counted per sequence, as in AIMS-PSA. CAFTA minimizes cut sets across sequences and reports 221.
+Results were obtained with the CAFTA model (CAFTA Cutset Generator x64, truncation 1.0E-17). The AIMS-PSA model gives the same CDF.
 
 Key insights:
 
@@ -79,6 +77,7 @@ iPWR-PSA-model/
 
 1. Open `iPWR PSA (AIMS-PSA)/iPWR-KHU.prj` in AIMS-PSA.
 2. Run the quantification (One Top, FTREX, truncation 1.0E-17).
+3. AIMS-PSA counts minimal cut sets separately for each sequence, so the number of cut sets it reports can be larger than the CAFTA count above, while the CDF is the same.
 
 ### CAFTA
 
@@ -112,12 +111,9 @@ You may use, copy, modify, and redistribute the model for **non-commercial resea
 
 Copyright © 2026 Jeongwoo Jae, Dohun Kwon, Ho Seok, Gyunyoung Heo, Kyung Hee University.
 
-## Citation
-
-If you use this model, please cite:
-
-> J. Jae, D. Kwon, H. Seok, G. Heo, "Development of an Open PSA Model Using iPWR Simulator," (journal and year to be added).
-
 ## Contact
 
-Gyunyoung Heo, Department of Nuclear Engineering, Kyung Hee University (gheo@khu.ac.kr)
+- Jeongwoo Jae: zaekinder@gmail.com
+- Gyunyoung Heo: gheo@khu.ac.kr
+
+Department of Nuclear Engineering, Kyung Hee University
