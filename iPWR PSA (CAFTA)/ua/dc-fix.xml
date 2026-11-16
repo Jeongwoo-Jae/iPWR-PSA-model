@@ -1,0 +1,22 @@
+<opsa-mef xmlns:opsa="http://www.open-psa.org">
+  <define-fault-tree name="DC-FIX">
+    <define-gate name="GAD-EV01-SUP">
+      <or>
+        <event name="GAD-SIGNAL" />
+        <event name="EPDCF-125V-DIV1" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV02-SUP">
+      <or>
+        <event name="GAD-SIGNAL" />
+        <event name="EPDCF-125V-DIV2" />
+      </or>
+    </define-gate>
+    <define-gate name="GEPDCF-125V-DIV1/2">
+      <and>
+        <event name="EPDCF-125V-DIV1" />
+        <event name="EPDCF-125V-DIV2" />
+      </and>
+    </define-gate>
+  </define-fault-tree>
+</opsa-mef>

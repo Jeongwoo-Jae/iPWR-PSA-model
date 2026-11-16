@@ -1,0 +1,139 @@
+---------------------------------------------------------------------------
+ FTREX INFORMATION
+---------------------------------------------------------------------------
+ FTREX version 2.0.0.2 KAERI (64 BIT, JUN 1, 2021)
+---------------------------------------------------------------------------
+ FTREX RUNNING MESSAGE
+---------------------------------------------------------------------------
+
+ [A].    0.12 sec.  MCS # =        0 (Read FT)
+---------------------------------------------------------------------------
+ EVENTS ONLY IN RECOVERY
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ WARNING EVENT NAMING IN RECOVERY
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ WARNING EVENT NAMING IN FT
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ DUPLICATED EVENTS IN THE FAULT TREE
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ EVENTS THAT HAVE NO DEFINED TYPE AND PROB (TYPE=EVENT, PROB=0.0 by /ASSP=0.0)
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ CONVERTED GATES DUE TO NEGATES OR COMPLEMENTARY EVENTS
+---------------------------------------------------------------------------
+ [B].    0.14 sec.  MCS # =        0 (Check options)
+---------------------------------------------------------------------------
+ FAULT TREE INFORMATION OF [###gen.Ftp]
+---------------------------------------------------------------------------
+
+ INPUT  FILE      = ###gen.Ftp
+ OUTPUT FILE      = #Result.raw
+ TOP EVENT      # = 1 (IPWR-TOP ...)
+ TRUNCATION ORDER =           0
+ TRUNCATION LIMIT = 1.0000e-017
+ GATE           # =          65
+ EVENT          # =        1054
+-GATE           # =           5
+-EVENT          # =           0
+ EVENT (P=1)    # =          13
+ EVENT (P=1)    # =           1 (under OR gate)
+ EVENT (P>1)    # =           0
+ EVENT (F=1)    # =           0
+ EVENT (F>1)    # =           0
+ EVENT INIT.    # =           2 (MAX = 2.1900e-002)
+ EVENT TRUE     # =           0
+ EVENT FALSE    # =           0
+ EVENT IGNORE   # =           0
+ EVENT DISJOINT # =           0
+ EVENT FLAG     # =           0
+ EVENT HUMAN    # =           0
+ EVENT RECOVERY # =           0
+ GATE  (KOON)   # =           0
+ LEN(NAME) > 32 # =           0
+ GATE  (XNEG)   # =           0
+ GATE  (LDEL)   # =           0
+
+ TOP EVENT        = IPWR-TOP
+ INITIATING EVENT = 2.1900e-002 %LOFW
+                  = 5.5013e-004 %SLOCA
+ EVENT (P=1)      = 1.0000e+000 #GIE-LOFW-3!
+                  = 1.0000e+000 #GIE-LOFW-4!
+                  = 1.0000e+000 #GIE-LOFW-6!
+                  = 1.0000e+000 #GIE-LOFW-7!
+                  = 1.0000e+000 #GIE-LOFW-8!
+                  = 1.0000e+000 #GIE-LOFW-9!
+                  = 1.0000e+000 #GIE-SLOCA-2!
+                  = 1.0000e+000 #GIE-SLOCA-3!
+                  = 1.0000e+000 #GIE-SLOCA-5!
+                  = 1.0000e+000 #GIE-SLOCA-6!
+                  = 1.0000e+000 #GIE-SLOCA-7!
+                  = 1.0000e+000 #GIE-SLOCA-8!
+                  = 1.0000e+000 UVAILABLE-FWS-MSS
+ EVENT (P=1)      = 1.0000e+000 UVAILABLE-FWS-MSS (under OR gate)
+---------------------------------------------------------------------------
+ FTREX RUNNING MESSAGE
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+ FTREX COMMAND LINE
+---------------------------------------------------------------------------
+ C:\Program Files (x86)\kaeri\Aims-PSA\Ftrex.exe ###gen.Ftp #Result.raw /ASSP=0 /p=1e-17
+---------------------------------------------------------------------------
+ FTREX PROGRESS
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+ FTREX OPTIONS
+---------------------------------------------------------------------------
+ /L           (*)            = 0
+ /L_ACCEL     (***)          = 0
+ /R           (**)           = 3
+ /M           (*)            = 1
+ /M_UTIL      (*)            = 1.0
+ /M_SEQ       (*)            = 2
+ /DELTERM     (*****)        = 1
+ /LDEL        (*****)        = 
+ /LDEL1       (**)           = 0
+ /LDEL2       (**)           = 0
+ /LDEL_MEX    (*****)        = 
+ /LDEL_NEGATE (*****)        = 
+ /VORDER      (**)           = 1
+ /GORDER      (****)         = 1.0
+ /CONV        (*)            = 1
+ /RCON        (*)            = 2
+ /KOON        (*)            = 0
+ /XNEG        (**)           = 
+ /MMF         (*****)        = 0
+ [C].    0.23 sec.  MCS # =        0 (Restructure FT)
+ [D].    0.23 sec.  MCS # =        0 (Find modules)
+                                          Module 1    # = 10 
+                                          Module 2    # = 7 
+                                          Copy down   # = 6
+ [E].    0.25 sec.  MCS # =        0 (Solve top event)
+                                       Solved gates   # = 46 
+                                       Cutset memory  # = 2244 
+ [F].    0.28 sec.  MCS # =      115 (IPWR-TOP Expand module 2)
+ [G].    0.28 sec.  MCS # =      115 (IPWR-TOP Expand module 1)
+ [H].    0.28 sec.  MCS # =      211 (IPWR-TOP Delterm G1/G2)
+ INITIATORS in CUTSETS
+ %LOFW
+ %SLOCA
+ [I].    0.35 sec.  MCS # =      211 (IPWR-TOP Write cutsets)
+---------------------------------------------------------------------------
+ FTREX CALCULATION SUMMARY
+---------------------------------------------------------------------------
+ INPUT  FILE      = ###gen.Ftp
+ OUTPUT FILE      = #Result.raw
+ TOP EVENT        = IPWR-TOP
+ TRUNCATION       = 1.0000e-017
+ PROB (SUM)       = 4.5419e-009 (4.541904e-009)
+ PROB (MCUB)      = 4.5419e-009 (4.541905e-009)
+ CUTSET #         =         211
+

@@ -1,0 +1,9 @@
+TC-LOMFW,0.0219,Loss of Main Feedwater (IE),LOMFW,G,0.0004702
+TC-SVV-SOP,6.28e-08,"Safety Valve Spurious Operation (RCS, PWR)",SVV-SOP-PWR-RCS,G,2.629e-15
+TC-HOV-FTOC,0.00123,Hydraulic-Operated Valve Fails To Open,HOV-FTOC,B,3.466e-6
+TC-MOV-FTO,0.000343,Motor-Operated Valve Fails To Open,MOV-FTO,B,4.747e-8
+TC-CKV-FTO,1.12e-05,Check Valve Fails To Open,CKV-FTO,B,2.5e-10
+TC-TNK-FC,4.18e-07,Tank Rupture,TNK-FC,G,4.16e-13
+TC-HTX-LOHT,3.39e-07,Heat Exchanger Plugging/Loss of Heat Transfer,HTX-LOHT,G,2.379e-13
+TC-BUS-DC,7.13e-07,DC Bus Fails To Operate,BUS-FTOP-DC,G,3.389e-13
+TC-CRD-FTOP,1.68e-07,Control Rod Drive Fails To Insert Rod,CRD-FTOP,G,5.04e-14

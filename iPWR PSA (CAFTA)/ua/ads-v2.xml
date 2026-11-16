@@ -1,0 +1,109 @@
+<opsa-mef xmlns:opsa="http://www.open-psa.org">
+  <define-fault-tree name="iPWR-ADS">
+    <define-gate name="GAD-FAIL">
+      <or>
+        <event name="GAD-TOP" />
+        <event name="GAD-BYPASS" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-TOP">
+      <and>
+        <event name="GAD-EV01" />
+        <event name="GAD-EV02" />
+        <event name="GAD-EV03" />
+      </and>
+    </define-gate>
+    <define-gate name="GAD-EV01">
+      <or>
+        <event name="ADEVOA-EV01" />
+        <event name="GAD-EV01-CCF" />
+        <event name="GAD-EV01-SUP" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV01-CCF">
+      <or>
+        <event name="GAD-EV01-CCF2" />
+        <event name="ADEVW3-EV01/02/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV01-CCF2">
+      <or>
+        <event name="ADEVW2-EV01/02" />
+        <event name="ADEVW2-EV01/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV01-SUP">
+      <or>
+        <event name="GAD-SIGNAL" />
+        <event name="EPDCF-125V-DIV1" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-SIGNAL">
+      <and>
+        <event name="ADOPH--SIGNAL" />
+        <event name="ADOPV--SIGNAL" />
+      </and>
+    </define-gate>
+    <define-gate name="GAD-EV02">
+      <or>
+        <event name="ADEVOB-02" />
+        <event name="GAD-EV02-CCF" />
+        <event name="GAD-EV02-SUP" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV02-CCF">
+      <or>
+        <event name="GAD-EV02-CCF2" />
+        <event name="ADEVW3-EV01/02/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV02-CCF2">
+      <or>
+        <event name="ADEVW2-EV01/02" />
+        <event name="ADEVW2-EV02/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV02-SUP">
+      <or>
+        <event name="GAD-SIGNAL" />
+        <event name="EPDCF-125V-DIV2" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV03">
+      <or>
+        <event name="ADEVOC-03" />
+        <event name="GAD-EV03-CCF" />
+        <event name="GAD-EV03-SUP" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV03-CCF">
+      <or>
+        <event name="GAD-EV03-CCF2" />
+        <event name="ADEVW3-EV01/02/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV03-CCF2">
+      <or>
+        <event name="ADEVW2-EV01/03" />
+        <event name="ADEVW2-EV02/03" />
+      </or>
+    </define-gate>
+    <define-gate name="GAD-EV03-SUP">
+      <or>
+        <event name="GAD-SIGNAL" />
+        <event name="GEPDCF-125V-DIV1/2" />
+      </or>
+    </define-gate>
+    <define-gate name="GEPDCF-125V-DIV1/2">
+      <and>
+        <event name="EPDCF-125V-DIV1" />
+        <event name="EPDCF-125V-DIV2" />
+      </and>
+    </define-gate>
+    <define-gate name="GAD-BYPASS">
+      <or>
+        <event name="ADOPH-BYPASS-ADS" />
+      </or>
+    </define-gate>
+  </define-fault-tree>
+</opsa-mef>

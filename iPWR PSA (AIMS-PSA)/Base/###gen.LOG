@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------
+ FTREX INFORMATION
+---------------------------------------------------------------------------
+ FTREX version 1.9.0.4 KAERI (64 BIT, OCT 17, 2018)
+---------------------------------------------------------------------------
+ FTREX RUNNING MESSAGE
+---------------------------------------------------------------------------
+ [A].    0.12 sec.  MCS # =           0 (Read FT)
+---------------------------------------------------------------------------
+ DUPLICATED EVENTS IN THE FAULT TREE
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ EVENTS THAT HAVE NO DEFINED TYPE AND PROB (TYPE=EVENT, PROB=0 by /ASSP=0)
+---------------------------------------------------------------------------
+ NOT FOUND
+---------------------------------------------------------------------------
+ FAULT TREE INFORMATION OF [###gen.Ftp]
+---------------------------------------------------------------------------
+ INPUT  FILE      = ###gen.Ftp
+ OUTPUT FILE      = ###gen.Raw
+ TOP EVENT      # = 1 (GCCS-TOP ...)
+ TRUNCATION ORDER =           0
+ TRUNCATION LIMIT = 1.0000e-011
+ GATE           # =          32
+ EVENT          # =          27
+-GATE           # =           0
+-EVENT          # =           0
+ EVENT (P=1)    # =           0
+ EVENT (P>1)    # =           0
+ EVENT (F=1)    # =           0
+ EVENT (F>1)    # =           0
+ EVENT INIT.    # =           0
+ EVENT TRUE     # =           0
+ EVENT FALSE    # =           0
+ EVENT IGNORE   # =           0
+ EVENT DISJOINT # =           0
+ EVENT FLAG     # =           0
+ EVENT RECOVERY # =           0
+ GATE  (KOON)   # =           0
+ GATE  (XNEG)   # =           0
+ GATE  (LDEL)   # =           0
+ TOP EVENT        = GCCS-TOP
+---------------------------------------------------------------------------
+ FTREX RUNNING MESSAGE
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+ CONVERTED GATES DUE TO NEGATES OR COMPLEMENTARY EVENTS
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+ FTREX COMMAND LINE
+---------------------------------------------------------------------------
+ C:\Program Files (x86)\kaeri\Aims-PSA\Ftrex.exe ###gen.Ftp ###gen.Raw /ASSP=0 /p=1e-11
+---------------------------------------------------------------------------
+ FTREX PROGRESS
+---------------------------------------------------------------------------
+ [B].    0.21 sec.  MCS # =           0 (Check logical loops)
+ [C].    0.22 sec.  MCS # =           0 (Restructure FT)
+ [D].    0.23 sec.  MCS # =           0 (Find modules)
+                                        Module 1     # = 8
+                                        Module 2     # = 1
+ [E].    0.25 sec.  MCS # =           0 (Solve top event)
+                      6  +
+                      6  +
+ [F].    0.28 sec.  MCS # =          13 (GCCS-TOP Expand module 1)
+ [G].    0.29 sec.  MCS # =         145 (GCCS-TOP Expand module 1)
+ [H].    0.30 sec.  MCS # =         145 (GCCS-TOP Write MCSs)
+---------------------------------------------------------------------------
+ FTREX CALCULATION SUMMARY
+---------------------------------------------------------------------------
+ TOP EVENT        = GCCS-TOP
+ TRUNCATION       = 1.0000e-011
+ PROB (SUM)       = 8.6802e-005 (8.680172e-005)
+ PROB (MCUB)      = 8.6798e-005 (8.679836e-005)
+ CUTSET #         =         145
+
+ BYTES REMAINING  = 0.0000e+000 MBytes
+ BYTES USED PEAK  = 1.1884e+001 MBytes
