@@ -1,0 +1,189 @@
+"#KIRAP_TREE Version 5"
+"Title=",""
+"UserName=",""
+"DataFileName=",""
+"RecoveryFileName=",""
+"Comments=",""
+"#NoXEvent=",29
+"#XEventData"
+1,"GAD-FAIL","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADS-Related Failure"
+""
+2,"GAD-EV01","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of ADSV01"
+""
+3,"GAD-EV02","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of ADSDV02"
+""
+4,"GAD-EV03","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of ADSV03"
+""
+5,"GAD-EV01-CCF","+",-1,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV01 Fails to Open Due to CCF"
+""
+6,"GAD-EV01-CCF2","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV01 Fails to Open due to CCF (2/3)"
+""
+7,"GAD-EV02-CCF","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV02 Fails to Open due to CCF"
+""
+8,"GAD-EV02-CCF2","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV02 Fails to Open due to CCF (2/3)"
+""
+9,"GAD-EV03-CCF","+",-1,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV03 Fails to Open due to CCF"
+""
+10,"GAD-EV03-CCF2","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV03 Fails to Open due to CCF (2/3)"
+""
+11,"GAD-EV01-SUP","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of Supporting System for ADSV01"
+""
+12,"GAD-SIGNAL","*",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of Auto Signal Generation"
+""
+13,"ADOPH--SIGNAL","B",0,0
+0.0001,0,0.0001,0,0,"L",0,"","",0,0,0,"","",""
+"Operator Fails to Generate ADS Actuation Signal"
+""
+14,"ADOPV--SIGNAL","B",0,0
+0.001,0,0.001,0,0,"L",0,"","",0,0,0,"","",""
+"Operator Fails to Recovery ADS Actuation Signal"
+""
+15,"EPDCFA-125V-DIV1","D",0,0
+1.7112E-05,1,7.13E-07,24,0,"L",0,"h","h",0,0,0,"","",""
+""
+""
+16,"GAD-EV02-SUP","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of Supporting System for ADSV02"
+""
+17,"EPDCFB-125V-DIV2","D",0,0
+1.7112E-05,1,7.13E-07,24,0,"L",0,"h","h",0,0,0,"","",""
+""
+""
+18,"GAD-EV03-SUP","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of Supporting System for ADSV03"
+""
+19,"GEPDCF-125V-DIV1/2","*",0,0
+0.001,0,0.001,0,0,"L",0,"","",0,0,0,"","",""
+""
+""
+20,"ADEVOA-EV01","B",0,0
+0.00123,0,0.00123,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV01 Fails to Open"
+""
+21,"ADEVW2-EV01/02","B",0,0
+2.4231E-05,0,0.00123,0,0,"L",0,"","",0.0197,0,0,"","",""
+"ADSV01/02 Fail to Open due to CCF (2/3)"
+""
+22,"ADEVW2-EV01/03","B",0,0
+2.4231E-05,0,0.00123,0,0,"L",0,"","",0.0197,0,0,"","",""
+"ADSV01/03 Fail to Open due to CCF (2/3)"
+""
+23,"ADEVW3-EV01/02/03","B",0,0
+2.0541E-05,0,0.00123,0,0,"L",0,"","",0.0167,0,0,"","",""
+"ADSV01/02/03 Fail to Open due to CCF (3/3)"
+""
+24,"ADEVW2-EV02/03","B",0,0
+2.4231E-05,0,0.00123,0,0,"L",0,"","",0.0197,0,0,"","",""
+"ADSV02/03 Fail to Open due to CCF (2/3)"
+""
+25,"ADEVOC-03","B",0,0
+0.00123,0,0.00123,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV03 Fails to Open"
+""
+26,"ADEVOB-02","B",0,0
+0.00123,0,0.00123,0,0,"L",0,"","",0,0,0,"","",""
+"ADSV02 Fails to Open"
+""
+27,"GAD-TOP","*",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Failure of ADS"
+""
+28,"GAD-BYPASS","+",0,0
+0,0,0,0,0,"L",0,"","",0,0,0,"","",""
+"Block ADS Actuation Upon Successful PDHR Operation"
+""
+29,"ADOPH-BYPASS-ADS","B",0,0
+0.001,0,0.001,0,0,"L",0,"","",0,0,0,"","",""
+"Operator Fails to Block ADS Actuation"
+""
+"#TreeLogic"
+1,"+",2
+27
+28
+2,"+",3
+20
+5
+11
+3,"+",3
+26
+7
+16
+4,"+",3
+25
+9
+18
+5,"+",2
+6
+23
+6,"+",2
+21
+22
+7,"+",2
+8
+23
+8,"+",2
+21
+24
+9,"+",2
+10
+23
+10,"+",2
+22
+24
+11,"+",2
+12
+15
+12,"*",2
+13
+14
+16,"+",2
+12
+17
+18,"+",2
+12
+19
+19,"*",2
+15
+17
+27,"*",3
+2
+3
+4
+28,"+",1
+29
+-1,"?",0
+" "
+"Continue"
+"#NoPage=",-1
+" "
+"Continue"
+"NoEventOmega=",-1
+"NoEventPhi=",-1
+" "
+"End"

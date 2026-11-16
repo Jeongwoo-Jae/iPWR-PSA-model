@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project name="GIS">
+  <PageGroup>
+    <Page name="Base" type="Folder">
+      <Properties name="Properties" type="Properties" PSAScope="ET/FT" Description="" Remark="" ReferencePage="Base" UseReferencePage="True" UseReferenceFlag="True" UseReferenceRecovery="True" TopEvent="IPWR-TOP" CutOff="1e-17" CutSetGenerator="Ftrex" RecoveryExe="Ftrex" SuccessBranchDelTerm="True" UseSequenceNumber="True" MinimizeBetweenSequence="False" PdsBranchOrHead="Head" PdsResultType="Number" PdsModelDetail="Full" PdsMethod="Propagation" CetBranchOrHead="Branch" CetResultType="Logic" CetModelDetail="Full" CetMethod="Propagation" StcBranchOrHead="Branch" StcResultType="Number" StcModelDetail="Full" StcMethod="Propagation">
+      </Properties>
+      <Model name="Model" type="Folder">
+        <FT name="Fault Tree" type="Folder">
+          <File name="GIS.Kft" type="FT">
+          </File>
+          <File name="ADS.Kft" type="FT">
+          </File>
+          <File name="PIS.KFT" type="FT">
+          </File>
+          <File name="IPWR-SUM.KFT" type="FT">
+          </File>
+          <File name="IPWR-IE-FREQ.KFT" type="FT">
+          </File>
+          <File name="RT.KFT" type="FT">
+          </File>
+          <File name="PDHR.Kft" type="FT">
+          </File>
+          <File name="ET-INTERFACE.kft" type="FT">
+          </File>
+        </FT>
+        <ET name="Event Tree" type="Folder">
+          <File name="SLOCA.ket" type="ET">
+          </File>
+          <File name="LOFW.Ket" type="ET">
+          </File>
+        </ET>
+        <Data name="Data" type="Folder">
+        </Data>
+      </Model>
+      <OneTop name="OneTop" type="Folder">
+      </OneTop>
+      <Result name="Result" type="Folder">
+      </Result>
+    </Page>
+  </PageGroup>
+  <Document name="Document" type="Folder">
+  </Document>
+</Project>
